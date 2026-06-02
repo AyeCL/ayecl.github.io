@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fbfaf7;
+  --text: #191919;
+  --muted: #66615c;
+  --line: rgba(25, 25, 25, 0.12);
+  --hover: #0b6bff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 196, 79, 0.16), transparent 34%),
+    var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+main {
+  width: min(100% - 48px, 520px);
+  padding: 72px 0;
+}
+
+.mark {
+  margin: 0 0 18px;
+  color: #ff8a3d;
+  font-size: 26px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.intro {
+  max-width: 380px;
+  margin: 22px 0 34px;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--hover);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+nav a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.42);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --text: #f6f1e8;
+    --muted: #b5aea4;
+    --line: rgba(246, 241, 232, 0.14);
+    --hover: #7db1ff;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 50% 42%, rgba(255, 138, 61, 0.16), transparent 34%),
+      var(--bg);
+  }
+
+  nav a {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media (max-width: 520px) {
+  main {
+    width: min(100% - 32px, 520px);
+    padding: 48px 0;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+}
